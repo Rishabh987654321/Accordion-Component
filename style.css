@@ -1,0 +1,81 @@
+/* Styling of outer div  */
+.accordioncontainer {
+    width: 80%;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(157, 58, 58, 0.1);
+    background: #ffffff; 
+}
+
+/* styling of each component item in accordion */
+.accordionitem {
+    border-bottom: 1px solid #b3b2b2;
+}
+
+
+.accordionheader {
+    background-color: #f7f7f7;
+    color: #333;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* This is the icon to show down arrow on each accordion item */
+.accordionheader::after {
+    content: '\f078'; 
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+/* using after properties to rotate the arrow on clicking */
+.accordionheader.active::after {
+    transform: rotate(-180deg);
+}
+
+
+.accordionheader:hover {
+    background-color: #e6e6e6;
+    color: #000;
+}
+
+.accordioncontent {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    background-color: #fafafa;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+
+.accordioncontent.show {
+    padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .accordioncontainer {
+        width: 90%;
+    }
+
+    .accordionheader {
+        font-size: 0.95rem;
+        padding: 18px;
+    }
+}
